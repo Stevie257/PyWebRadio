@@ -1,5 +1,5 @@
 # PyWebRadio
-A program that plays audio like a radio station to a browser and/or Discord bot
+A program that plays music like a radio station to a browser and/or Discord bot
 
 Originally created for my own internet radio station, [98.6 WCCK](https://wcckdeadfm.com), now remastered and available for anyone to use and create their own station.
 
