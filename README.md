@@ -62,7 +62,7 @@ The second value is the track title and will change to your station's title (set
 
 The last value is how many seconds remain the currently playing song. This is useful for automatically updating your site with new info when your station starts playing a new song.
 
-Heres an example of a script that could be used to show what song is currently playing on your site by grabbing the information from the program:
+Here's an example of a script that could be used to show what song is currently playing on your site by grabbing the information from the program:
 ```
 async function getPlaying() {
     let response = await fetch('/playing');
@@ -78,7 +78,7 @@ async function getPlaying() {
 ```
 This script will update two HTML elements with the IDs `"status"` and `"tracktitle"` with the respective data and then wait the amount of time remaining in the current song to update again. 
 > [!NOTE]
-> If you manually skip a song in the program this script wont update. Consider making your own or adding a refresh button that fetches the latest information from the program.
+> If you manually skip a song in the program this script wont update. Consider making your own update script or adding a refresh button that fetches the latest information from the program.
 
 ---
 
@@ -95,4 +95,4 @@ If you're interested in seeing an example of the program, all of this can be see
 
 Special thanks to [SubspaceAudio](https://opengameart.org/users/subspaceaudio) on [opengameart.org](https://opengameart.org/) for the sample audio included with the program. 
 
-If you have an questions, concerns, or feature requests, please don't hesitate to use the issues tab!
+If you have any questions, concerns, or feature requests, please don't hesitate to use the issues tab!
