@@ -46,3 +46,49 @@ The program has two main web features, the actual audio stream and a "now playin
 The program will stream the input device set above to a kind of "live" audio file. The stream is hosted on your network with the port set in the stream tab at `/playing`. For this explanation we'll assume the port is the default `5959`.
 
 If the program is open and the audio stream is enabled, you can listen to the stream by going to `localhost:5959/playing` in your web browser. For other people outside your local network, you'll have to [port forward](https://en.wikipedia.org/wiki/Port_forwarding) `5959` in your router. Port forwarding is a little complicated and differs from router to router so I won't detail how to do it here, but there are plenty of tutorials online that will walk you through the process.
+
+Once you've completed that you should be able to add the audio file directly to your site using an HTML <audio> tag.
+
+### Now Playing
+The program also allows you to get what song is currently playing on the station similarly to the Discord bot. When the program is running you can find this information at `localhost:5959/playing`.
+
+At this URL you should see a JSON array with **three values**. 
+
+![The array's three elements](./documentation/info.png)
+
+The first value in the array is the "status." This will remain as "Now playing" for most of the time but will change to "Intermission" when playing jingles.
+
+The second value is the track title and will change to your station's title (set in the station tab) when playing jingles.
+
+The last value is how many seconds remain the currently playing song. This is useful for automatically updating your site with new info when your station starts playing a new song.
+
+Heres an example of a script that could be used to show what song is currently playing on your site by grabbing the information from the program:
+```
+async function getPlaying() {
+    let response = await fetch('/playing');
+    let json = await response.json();
+    document.getElementById('status').innerHTML = json[0];
+    document.getElementById('tracktitle').innerHTML = json[1];
+    setTimeout(() => {
+        (async() => {
+        await getPlaying();
+        })();
+    }, json[2] * 1000);
+}
+```
+This script will update two HTML elements with the IDs `"status"` and `"tracktitle"` with the respective data and then wait the amount of time remaining in the current song to update again. 
+> [!NOTE]
+> If you manually skip a song in the program this script wont update. Consider making your own or adding a refresh button that fetches the latest information from the program.
+
+---
+
+# Music
+All the audio files the program will play are located in the `Music`, `Jingles`, and `End` folders. Place all of the tracks you want the station to play inside of the `Music` folder and all of your jingles in the `Jingles` folder. If enabled, the program will add all audio files inside the `End` folder to the end of the queue without adding any jingles between them.
+
+You can enable or disable adding jingles and end audio in the settings tab.
+> [!CAUTION]
+> The program will not work if the `Music` folder is empty. You can leave the `Jingles` or `End` folders empty but **if and only if they're disabled in the settings.**
+
+---
+
+If you're interested in seeing an example of the program, all of this can be seen in use at my own internet station [wcckdeadfm.com](https://wcckdeadfm.com).
