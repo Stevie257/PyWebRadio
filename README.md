@@ -10,9 +10,9 @@ Originally created for my own internet radio station, [98.6 WCCK](https://wcckde
 ---
 
 # Installation
-Download the program and run the executable, all config files should be created automatically. Make sure to leave the `End`, `Jingles`, and `Music` folders alone for now.
+Download the program and run `main.py`, all config files should be created automatically. Make sure to leave the `End`, `Jingles`, and `Music` folders alone for now.
 
-To stream audio through a Discord bot, you'll need to download [ffmpeg](https://ffmpeg.org/) and place `ffmpeg.exe` in the program's folder next to the executable.
+To stream audio through a Discord bot, you'll need to download [ffmpeg](https://ffmpeg.org/) and place `ffmpeg.exe` in the program's folder next to the `main.py` script.
 
 ---
 
