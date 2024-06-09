@@ -83,7 +83,7 @@ This script will update two HTML elements with the IDs `"status"` and `"tracktit
 ---
 
 # Music
-All the audio files the program will play are located in the `Music`, `Jingles`, and `End` folders. Place all of the tracks you want the station to play inside of the `Music` folder and all of your jingles in the `Jingles` folder. If enabled, the program will add all audio files inside the `End` folder to the end of the queue without adding any jingles between them.
+All the audio files the program will play are located in the `Music`, `Jingles`, and `End` folders. Delete the existing sample audio and place all of the tracks you want the station to play inside of the `Music` folder and all of your jingles in the `Jingles` folder. If enabled, the program will add all audio files inside the `End` folder to the end of the queue without adding any jingles between them.
 
 You can enable or disable adding jingles and end audio in the settings tab.
 > [!CAUTION]
