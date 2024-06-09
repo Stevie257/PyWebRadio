@@ -884,14 +884,19 @@ def DiscordBot():
 
     try:
         t = open("token.txt", "r")
+        validToken = True
         
     except:
         t = open("token.txt", "a+")
         print('Place Discord bot token in token.txt')
-        displayerror("Place Discord bot token in token.txt", 5)
-    
+        validToken = False
+        err = thr.Thread(target=displayerror, args=("Place Discord bot token in token.txt", 5))
+        err.daemon = True
+        err.start()
 
-    client.run(str(t.read()))
+    
+    if validToken:
+        client.run(str(t.read()))
 
 if botEnabled:
     bot = thr.Thread(target=DiscordBot)
