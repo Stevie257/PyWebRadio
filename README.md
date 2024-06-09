@@ -3,6 +3,10 @@ A program that plays music like a radio station to a browser and/or Discord bot
 
 Originally created for my own internet radio station, [98.6 WCCK](https://wcckdeadfm.com), now remastered and available for anyone to use and create their own station.
 
+<div align="center">
+    <img src="./documentation/screenshot.png"></img>
+</div>
+
 ---
 
 # Installation
@@ -54,7 +58,9 @@ The program also allows you to get what song is currently playing on the station
 
 At this URL you should see a JSON array with **three values**. 
 
-![The array's three elements](./documentation/info.png)
+<div align="center">
+    <img src="./documentation/info.png"></img>
+</div>
 
 The first value in the array is the "status." This will remain as "Now playing" for most of the time but will change to "Intermission" when playing jingles.
 
