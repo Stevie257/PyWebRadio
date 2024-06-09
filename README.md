@@ -93,4 +93,6 @@ You can enable or disable adding jingles and end audio in the settings tab.
 
 If you're interested in seeing an example of the program, all of this can be seen in use at my own internet station [wcckdeadfm.com](https://wcckdeadfm.com).
 
+Special thanks to [SubspaceAudio](https://opengameart.org/users/subspaceaudio) on [opengameart.org](https://opengameart.org/) for the sample audio included with the program. 
+
 If you have an questions, concerns, or feature requests, please don't hesitate to use the issues tab!
